@@ -4,11 +4,7 @@ class Model {
   }
 
   bindToDoListChanged = (callback) => (this.onToDoListChanged = callback);
-
-  commit(todos) {
-    this.onToDoListChanged(todos);
-    localStorage.setItem('todos', JSON.stringify(todos));
-  }
+  bindCommit = (callback) => (this.commit = callback);
 
   addToDo(newToDo) {
     const todo = {
@@ -172,13 +168,17 @@ class Controller {
     this.model = model;
     this.view = view;
     this.model.bindToDoListChanged(this.onToDoListChanged);
+    this.model.bindCommit(this.commit);
     this.view.bindAddTodo(this.handleAddTodo);
     this.view.bindEditTodo(this.handleEditTodo);
     this.view.bindDeleteTodo(this.handleDeleteTodo);
     this.view.bindToggleTodo(this.handleToggleTodo);
     this.onToDoListChanged(this.model.todos);
   }
-
+  commit(todos) {
+    this.onToDoListChanged(todos);
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }
   onToDoListChanged = (todos) => this.view.displayTodos(todos);
   handleAddTodo = (newToDo) => this.model.addToDo(newToDo);
   handleEditTodo = (id, newToDo) => this.model.editToDo(id, newToDo);

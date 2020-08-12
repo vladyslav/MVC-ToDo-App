@@ -6,13 +6,10 @@
 }
 
 html {
-  background: linear-gradient(
-      191deg,
+  background: linear-gradient(191deg,
       rgb(40, 27, 44) 0%,
       rgb(201, 170, 192) 49%,
-      rgb(109, 105, 101) 100%
-    )
-    fixed;
+      rgb(109, 105, 101) 100%) fixed;
   font-family: 'Indie Flower', cursive;
   height: 100%;
 }
@@ -136,9 +133,11 @@ p {
   h1 {
     font-size: 5rem;
   }
+
   #todo {
     padding: 24px;
   }
+
   li {
     padding: 20px;
   }
@@ -148,9 +147,11 @@ p {
   h1 {
     font-size: 4rem;
   }
+
   #todo {
     padding: 20px;
   }
+
   li {
     padding: 16px;
   }
@@ -160,9 +161,11 @@ p {
   h1 {
     font-size: 3rem;
   }
+
   #todo {
     padding: 15px;
   }
+
   li {
     padding: 10px;
   }
@@ -172,23 +175,26 @@ p {
   h1 {
     font-size: 2rem;
   }
+
   #todo {
     padding: 15px;
   }
+
   li {
     padding: 5px;
     flex-wrap: wrap;
   }
-  li > span {
+
+  li>span {
     flex: 1 0 100%;
   }
 
-  li > [type='checkbox'] {
+  li>[type='checkbox'] {
     flex: -1 0 20%;
     text-align: center;
   }
 
-  li > button {
+  li>button {
     flex: 1 0 20%;
     text-align: center;
   }
